@@ -75,4 +75,15 @@ public enum Rank {
             default -> throw new IllegalArgumentException();
         };
     }
+
+    public int embedColor() {
+        return switch (this) {
+            case NOVICE_I, NOVICE_II, NOVICE_III -> 0x9ED4BB;
+            case ADEPT_I, ADEPT_II, ADEPT_III -> 0x07721A;
+            case EXPERT_I, EXPERT_II, EXPERT_III -> 0xFFD300;
+            case MASTER_I, MASTER_II, MASTER_III -> 0xC97100;
+            case SAINT_I, SAINT_II, SAINT_III -> 0xF10067;
+            case CELESTIAL -> 0x3F8AFF;
+        };
+    }
 }

@@ -55,7 +55,7 @@ public class RegistrationModal implements IModal {
                     .addField("玩家 ID", event.getInteraction().getUser().getId(), false)
                     .addField("段位", Rank.valueOf(0).toString(), true)
                     .addField("段位分", "`0 / " + Rank.valueOf(0).pointsRequired() + "`", false)
-                    .setColor(0x9ED4BB);
+                    .setColor(Rank.valueOf(0).embedColor());
             event.reply("登記完成！請檢查以下資料是否正確：")
                     .setEphemeral(true)
                     .addEmbeds(builder.build())
