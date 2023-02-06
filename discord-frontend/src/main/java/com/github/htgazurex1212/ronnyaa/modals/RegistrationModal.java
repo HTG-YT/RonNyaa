@@ -2,11 +2,15 @@ package com.github.htgazurex1212.ronnyaa.modals;
 
 import com.github.htgazurex1212.ronnyaa.RonNyaaMain;
 import com.github.htgazurex1212.ronnyaa.models.discord.IModal;
+import com.github.htgazurex1212.ronnyaa.models.game.ranking.Rank;
+import net.dv8tion.jda.api.EmbedBuilder;
+import net.dv8tion.jda.api.entities.MessageEmbed;
 import net.dv8tion.jda.api.events.interaction.ModalInteractionEvent;
 import net.dv8tion.jda.api.interactions.components.ActionRow;
 import net.dv8tion.jda.api.interactions.components.text.TextInput;
 import net.dv8tion.jda.api.interactions.components.text.TextInputStyle;
 import net.dv8tion.jda.api.interactions.modals.Modal;
+import net.dv8tion.jda.api.utils.messages.MessageCreateData;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -46,6 +50,18 @@ public class RegistrationModal implements IModal {
             statement.setInt(3, 0);
             statement.setInt(4, 0);
             statement.executeUpdate();
+
+            @SuppressWarnings("DataFlowIssue")
+            EmbedBuilder builder = new EmbedBuilder()
+                    .addField("玩家名稱", event.getValue("username").getAsString(), false)
+                    .addField("玩家 ID", event.getInteraction().getUser().getId(), false)
+                    .addField("段位", Rank.valueOf(0).toString(), true)
+                    .addField("段位分", "`0 / " + Rank.valueOf(0).pointsRequired() + "`", false)
+                    .setColor(0x9ED4BB);
+            event.reply("登記完成！請檢查以下資料是否正確：")
+                    .setEphemeral(true)
+                    .addEmbeds(builder.build())
+                    .queue();
         }
         catch (Throwable throwable) {
             LOGGER.error("Unhandled exception:", throwable);
