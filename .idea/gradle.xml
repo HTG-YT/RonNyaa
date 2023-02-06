@@ -9,6 +9,8 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/discord-frontend" />
+            <option value="$PROJECT_DIR$/models" />
           </set>
         </option>
       </GradleProjectSettings>
