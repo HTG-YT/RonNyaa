@@ -2,6 +2,7 @@ package com.github.htgazurex1212.ronnyaa;
 
 import com.github.htgazurex1212.ronnyaa.commands.PingCommand;
 import com.github.htgazurex1212.ronnyaa.listeners.ReadyListener;
+import com.github.htgazurex1212.ronnyaa.listeners.SlashCommandInteractionListener;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.requests.GatewayIntent;
@@ -21,7 +22,7 @@ public class RonNyaaMain {
             LOGGER.trace("building JDA");
             JDA jda = JDABuilder
                     .create(dotenv.get("RONNYAA_BOT_TOKEN"), GatewayIntent.getIntents(GatewayIntent.ALL_INTENTS))
-                    .addEventListeners(new ReadyListener())
+                    .addEventListeners(new ReadyListener(), new SlashCommandInteractionListener())
                     .build();
 
             jda.awaitReady();
