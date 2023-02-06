@@ -14,15 +14,15 @@ import org.slf4j.LoggerFactory;
 
 public class RonNyaaMain {
     private static final Logger LOGGER = LoggerFactory.getLogger(RonNyaaMain.class);
+    public static final Dotenv DOTENV = new DotenvBuilder().load();
 
     public static void main(String[] args) {
         try {
             LOGGER.trace("loading environment variables");
-            Dotenv dotenv = new DotenvBuilder().load();
 
             LOGGER.trace("building JDA");
             JDA jda = JDABuilder
-                    .create(dotenv.get("RONNYAA_BOT_TOKEN"), GatewayIntent.getIntents(GatewayIntent.ALL_INTENTS))
+                    .create(DOTENV.get("RONNYAA_BOT_TOKEN"), GatewayIntent.getIntents(GatewayIntent.ALL_INTENTS))
                     .addEventListeners(new ReadyListener(), new SlashCommandInteractionListener())
                     .build();
 
