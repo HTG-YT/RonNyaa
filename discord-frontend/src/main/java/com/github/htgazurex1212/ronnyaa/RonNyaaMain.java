@@ -1,5 +1,6 @@
 package com.github.htgazurex1212.ronnyaa;
 
+import com.github.htgazurex1212.ronnyaa.commands.PingCommand;
 import com.github.htgazurex1212.ronnyaa.listeners.ReadyListener;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
@@ -24,6 +25,10 @@ public class RonNyaaMain {
                     .build();
 
             jda.awaitReady();
+
+            jda.updateCommands()
+                    .addCommands(new PingCommand().asCommandData())
+                    .queue();
         } catch (Throwable throwable) {
             LOGGER.error("Unhandled exception:", throwable);
         }
