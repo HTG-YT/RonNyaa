@@ -4,13 +4,11 @@ import com.github.htgazurex1212.ronnyaa.RonNyaaMain;
 import com.github.htgazurex1212.ronnyaa.models.discord.IModal;
 import com.github.htgazurex1212.ronnyaa.models.game.ranking.Rank;
 import net.dv8tion.jda.api.EmbedBuilder;
-import net.dv8tion.jda.api.entities.MessageEmbed;
 import net.dv8tion.jda.api.events.interaction.ModalInteractionEvent;
 import net.dv8tion.jda.api.interactions.components.ActionRow;
 import net.dv8tion.jda.api.interactions.components.text.TextInput;
 import net.dv8tion.jda.api.interactions.components.text.TextInputStyle;
 import net.dv8tion.jda.api.interactions.modals.Modal;
-import net.dv8tion.jda.api.utils.messages.MessageCreateData;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
