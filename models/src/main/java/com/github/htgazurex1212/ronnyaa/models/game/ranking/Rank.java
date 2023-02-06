@@ -1,4 +1,4 @@
-package com.github.htgazurex1212.ronnyaa.models.ranking;
+package com.github.htgazurex1212.ronnyaa.models.game.ranking;
 
 public enum Rank {
     NOVICE_I,

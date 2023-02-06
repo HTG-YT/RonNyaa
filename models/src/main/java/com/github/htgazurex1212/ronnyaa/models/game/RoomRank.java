@@ -1,6 +1,6 @@
 package com.github.htgazurex1212.ronnyaa.models.game;
 
-import com.github.htgazurex1212.ronnyaa.models.ranking.Rank;
+import com.github.htgazurex1212.ronnyaa.models.game.ranking.Rank;
 import org.jetbrains.annotations.NotNull;
 
 public enum RoomRank {
