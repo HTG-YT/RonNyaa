@@ -19,7 +19,7 @@ public class RonNyaaMain {
 
             LOGGER.trace("building JDA");
             JDA jda = JDABuilder
-                    .create(dotenv.get("BOT_TOKEN"), GatewayIntent.getIntents(GatewayIntent.ALL_INTENTS))
+                    .create(dotenv.get("RONNYAA_BOT_TOKEN"), GatewayIntent.getIntents(GatewayIntent.ALL_INTENTS))
                     .addEventListeners(new ReadyListener())
                     .build();
 
