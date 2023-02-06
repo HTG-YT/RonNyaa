@@ -14,9 +14,9 @@ public class PingCommand implements ApplicationCommand {
     @Override
     public void execute(SlashCommandInteractionEvent event) {
         long time = System.currentTimeMillis();
-        event.reply("Pong!")
+        event.reply("我的延遲嘛...")
                 .flatMap(
-                        hook -> hook.editOriginalFormat("Pong! My latency: `%d ms`", System.currentTimeMillis() - time)
+                        hook -> hook.editOriginalFormat("我的延遲嘛... `%d 毫秒`", System.currentTimeMillis() - time)
                 )
                 .queue();
     }
