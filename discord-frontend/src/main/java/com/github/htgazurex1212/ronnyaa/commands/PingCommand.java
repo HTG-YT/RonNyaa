@@ -1,11 +1,11 @@
 package com.github.htgazurex1212.ronnyaa.commands;
 
-import com.github.htgazurex1212.ronnyaa.models.discord.ApplicationCommand;
+import com.github.htgazurex1212.ronnyaa.models.discord.IApplicationCommand;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.interactions.commands.build.CommandData;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
 
-public class PingCommand implements ApplicationCommand {
+public class PingCommand implements IApplicationCommand {
     @Override
     public CommandData asCommandData() {
         return Commands.slash("延遲", "獲取延遲資料");
