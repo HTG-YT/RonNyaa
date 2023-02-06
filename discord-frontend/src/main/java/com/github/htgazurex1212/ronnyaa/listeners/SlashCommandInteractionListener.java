@@ -8,7 +8,7 @@ public class SlashCommandInteractionListener extends ListenerAdapter {
     @Override
     public void onSlashCommandInteraction(SlashCommandInteractionEvent event) {
         switch (event.getName()) {
-            case "ping":
+            case "延遲":
                 new PingCommand().execute(event);
                 break;
             default:
