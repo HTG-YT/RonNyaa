@@ -57,9 +57,9 @@ public class RegistrationModal implements IModal {
             EmbedBuilder builder = new EmbedBuilder()
                     .addField("玩家名稱", event.getValue("username").getAsString(), false)
                     .addField("玩家 ID", event.getInteraction().getUser().getId(), false)
-                    .addField("段位：三人麻", Rank.valueOf(0).toString(), false)
+                    .addField("段位：三人麻", Rank.valueOf(0).toString(), true)
                     .addField("段位：四人麻", Rank.valueOf(0).toString(), true)
-                    .addField("段位分：四人麻", "`0 / " + Rank.valueOf(0).pointsRequired() + "`", false)
+                    .addField("段位分：三人麻", "`0 / " + Rank.valueOf(0).pointsRequired() + "`", false)
                     .addField("段位分：四人麻", "`0 / " + Rank.valueOf(0).pointsRequired() + "`", true)
                     .setColor(Rank.valueOf(0).embedColor());
             event.reply("登記完成！請檢查以下資料是否正確：")
