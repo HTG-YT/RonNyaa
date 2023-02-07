@@ -25,12 +25,12 @@ public class ProfileCommand implements IApplicationCommand {
     @Override
     public CommandData asCommandData() {
         return Commands.slash("玩家", "提取玩家資料")
-                .addOption(OptionType.USER, "玩家 Discord 用戶", "", false);
+                .addOption(OptionType.USER, "user", "玩家 Discord 用戶", false);
     }
 
     @Override
     public void execute(SlashCommandInteractionEvent event) {
-        User user = Objects.requireNonNull(event.getInteraction().getOption("玩家 Discord 用戶")).getAsUser();
+        User user = Objects.requireNonNull(event.getInteraction().getOption("user")).getAsUser();
 
         Properties properties = new Properties();
         properties.setProperty("user", RonNyaaMain.DOTENV.get("RONNYAA_PGSQL_USERNAME"));
