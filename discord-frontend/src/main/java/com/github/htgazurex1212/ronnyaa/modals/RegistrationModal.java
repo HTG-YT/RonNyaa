@@ -42,19 +42,25 @@ public class RegistrationModal implements IModal {
             LOGGER.trace("connecting to database");
             Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost/postgres", properties);
 
-            PreparedStatement statement = connection.prepareStatement("INSERT INTO \"Players\" (username, userid, rank, xp) VALUES (?, ?, ?, ?)");
+            PreparedStatement statement = connection.prepareStatement(
+                    "INSERT INTO \"Players\" (username, userid, \"threePlayerRank\", \"threePlayerXp\", \"fourPlayerRank\", \"fourPlayerXp\") VALUES (?, ?, ?, ?, ?, ?)"
+            );
             statement.setString(1, Objects.requireNonNull(event.getValue("username")).getAsString());
             statement.setString(2, event.getInteraction().getUser().getId());
             statement.setInt(3, 0);
             statement.setInt(4, 0);
+            statement.setInt(5, 0);
+            statement.setInt(6, 0);
             statement.executeUpdate();
 
             @SuppressWarnings("DataFlowIssue")
             EmbedBuilder builder = new EmbedBuilder()
                     .addField("玩家名稱", event.getValue("username").getAsString(), false)
                     .addField("玩家 ID", event.getInteraction().getUser().getId(), false)
-                    .addField("段位", Rank.valueOf(0).toString(), true)
-                    .addField("段位分", "`0 / " + Rank.valueOf(0).pointsRequired() + "`", false)
+                    .addField("段位：三人麻", Rank.valueOf(0).toString(), false)
+                    .addField("段位：四人麻", Rank.valueOf(0).toString(), true)
+                    .addField("段位分：四人麻", "`0 / " + Rank.valueOf(0).pointsRequired() + "`", false)
+                    .addField("段位分：四人麻", "`0 / " + Rank.valueOf(0).pointsRequired() + "`", true)
                     .setColor(Rank.valueOf(0).embedColor());
             event.reply("登記完成！請檢查以下資料是否正確：")
                     .setEphemeral(true)
