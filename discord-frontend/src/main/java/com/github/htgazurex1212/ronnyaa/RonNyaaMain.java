@@ -1,6 +1,7 @@
 package com.github.htgazurex1212.ronnyaa;
 
 import com.github.htgazurex1212.ronnyaa.commands.PingCommand;
+import com.github.htgazurex1212.ronnyaa.commands.ProfileCommand;
 import com.github.htgazurex1212.ronnyaa.commands.RegisterCommand;
 import com.github.htgazurex1212.ronnyaa.listeners.ModalInteractionListener;
 import com.github.htgazurex1212.ronnyaa.listeners.ReadyListener;
@@ -35,6 +36,7 @@ public class RonNyaaMain {
 
             jda.updateCommands()
                     .addCommands(new PingCommand().asCommandData())
+                    .addCommands(new ProfileCommand().asCommandData())
                     .addCommands(new RegisterCommand().asCommandData())
                     .queue();
         } catch (Throwable throwable) {

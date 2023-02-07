@@ -20,6 +20,7 @@ import java.util.Properties;
 
 public class RegistrationModal implements IModal {
     private static final Logger LOGGER = LoggerFactory.getLogger(RegistrationModal.class);
+
     @Override
     public Modal asModal() {
         TextInput username = TextInput.create("username", "玩家名稱", TextInputStyle.SHORT)
