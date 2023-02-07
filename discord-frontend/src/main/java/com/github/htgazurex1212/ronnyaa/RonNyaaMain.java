@@ -9,9 +9,9 @@ import com.github.htgazurex1212.ronnyaa.listeners.SlashCommandInteractionListene
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.requests.GatewayIntent;
-import org.slf4j.Logger;
 import io.github.cdimascio.dotenv.Dotenv;
 import io.github.cdimascio.dotenv.DotenvBuilder;
+import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class RonNyaaMain {
