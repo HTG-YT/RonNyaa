@@ -6,6 +6,7 @@ import com.github.htgazurex1212.ronnyaa.models.game.ranking.Rank;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.User;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
+import net.dv8tion.jda.api.interactions.commands.OptionMapping;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.CommandData;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
@@ -30,7 +31,8 @@ public class ProfileCommand implements IApplicationCommand {
 
     @Override
     public void execute(SlashCommandInteractionEvent event) {
-        User user = Objects.requireNonNull(event.getInteraction().getOption("user")).getAsUser();
+        OptionMapping optionMapping = event.getInteraction().getOption("user");
+        User user = optionMapping == null ? event.getUser() : optionMapping.getAsUser();
 
         Properties properties = new Properties();
         properties.setProperty("user", RonNyaaMain.DOTENV.get("RONNYAA_PGSQL_USERNAME"));
@@ -45,6 +47,7 @@ public class ProfileCommand implements IApplicationCommand {
             );
             statement.setString(1, user.getId());
             ResultSet resultSet = statement.executeQuery();
+            resultSet.next();
 
             EmbedBuilder builder = new EmbedBuilder()
                     .addField("玩家名稱", resultSet.getString("username"), false)
