@@ -19,7 +19,9 @@ public class GameFormatStringSelect implements IStringSelect {
 
     @Override
     public void handle(StringSelectInteractionEvent event) {
-        event.editMessage(""
-                event.getInteraction().getSelectedOptions().get(0).getLabel())
+        event.editMessage("請完成一下友人場房間設定。（`1 / 1`）\n**對局長度："
+                        + event.getInteraction().getSelectedOptions().get(0).getLabel() + "**"
+                )
+                .queue();
     }
 }
