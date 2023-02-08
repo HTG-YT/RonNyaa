@@ -1,5 +1,6 @@
 package com.github.htgazurex1212.ronnyaa;
 
+import com.github.htgazurex1212.ronnyaa.commands.FriendsMatchCommand;
 import com.github.htgazurex1212.ronnyaa.commands.PingCommand;
 import com.github.htgazurex1212.ronnyaa.commands.ProfileCommand;
 import com.github.htgazurex1212.ronnyaa.commands.RegisterCommand;
@@ -35,6 +36,7 @@ public class RonNyaaMain {
             jda.awaitReady();
 
             jda.updateCommands()
+                    .addCommands(new FriendsMatchCommand().asCommandData())
                     .addCommands(new PingCommand().asCommandData())
                     .addCommands(new ProfileCommand().asCommandData())
                     .addCommands(new RegisterCommand().asCommandData())

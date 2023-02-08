@@ -1,5 +1,6 @@
 package com.github.htgazurex1212.ronnyaa.listeners;
 
+import com.github.htgazurex1212.ronnyaa.commands.FriendsMatchCommand;
 import com.github.htgazurex1212.ronnyaa.commands.PingCommand;
 import com.github.htgazurex1212.ronnyaa.commands.ProfileCommand;
 import com.github.htgazurex1212.ronnyaa.commands.RegisterCommand;
@@ -10,6 +11,7 @@ public class SlashCommandInteractionListener extends ListenerAdapter {
     @Override
     public void onSlashCommandInteraction(SlashCommandInteractionEvent event) {
         switch (event.getName()) {
+            case "友人" -> new FriendsMatchCommand().execute(event);
             case "延遲" -> new PingCommand().execute(event);
             case "玩家" -> new ProfileCommand().execute(event);
             case "登記" -> new RegisterCommand().execute(event);
