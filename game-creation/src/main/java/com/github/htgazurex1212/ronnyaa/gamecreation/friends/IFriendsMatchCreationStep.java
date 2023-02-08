@@ -5,5 +5,7 @@ import net.dv8tion.jda.api.interactions.components.Component;
 import java.util.List;
 
 public interface IFriendsMatchCreationStep {
+    String message();
+
     List<Component> asComponents();
 }
