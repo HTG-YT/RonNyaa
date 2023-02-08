@@ -4,6 +4,7 @@ import com.github.htgazurex1212.ronnyaa.commands.FriendsMatchCommand;
 import com.github.htgazurex1212.ronnyaa.commands.PingCommand;
 import com.github.htgazurex1212.ronnyaa.commands.ProfileCommand;
 import com.github.htgazurex1212.ronnyaa.commands.RegisterCommand;
+import com.github.htgazurex1212.ronnyaa.gamecreation.friends.FriendsMatchCreationSteps;
 import com.github.htgazurex1212.ronnyaa.listeners.ModalInteractionListener;
 import com.github.htgazurex1212.ronnyaa.listeners.ReadyListener;
 import com.github.htgazurex1212.ronnyaa.listeners.SlashCommandInteractionListener;
@@ -16,9 +17,15 @@ import io.github.cdimascio.dotenv.DotenvBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.ArrayList;
+import java.util.List;
+
+
 public class RonNyaaMain {
     private static final Logger LOGGER = LoggerFactory.getLogger(RonNyaaMain.class);
     public static final Dotenv DOTENV = new DotenvBuilder().load();
+
+    public static List<FriendsMatchCreationSteps> stepsPool = new ArrayList<>();
 
     public static void main(String[] args) {
         try {

@@ -1,6 +1,7 @@
 version = "1.0-SNAPSHOT"
 
 dependencies {
+    implementation(project(":game-creation"))
     implementation(project(":models"))
 
     implementation("io.github.cdimascio:dotenv-java:2.3.2")
