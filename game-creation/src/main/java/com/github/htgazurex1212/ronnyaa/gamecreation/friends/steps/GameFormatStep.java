@@ -1,7 +1,7 @@
 package com.github.htgazurex1212.ronnyaa.gamecreation.friends.steps;
 
 import com.github.htgazurex1212.ronnyaa.gamecreation.friends.IFriendsMatchCreationStep;
-import net.dv8tion.jda.api.interactions.components.Component;
+import net.dv8tion.jda.api.interactions.components.ItemComponent;
 import net.dv8tion.jda.api.interactions.components.buttons.Button;
 import net.dv8tion.jda.api.interactions.components.selections.StringSelectMenu;
 
@@ -9,14 +9,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GameFormatStep implements IFriendsMatchCreationStep {
+    public int gameId;
+
+    public GameFormatStep(int gameId) {
+        this.gameId = gameId;
+    }
+
     @Override
     public String message() {
         return "請完成友人場房間設定。（`1 / 1`）\n**對局長度：**";
     }
 
     @Override
-    public List<Component> asComponents() {
-        ArrayList<Component> list = new ArrayList<>();
+    public List<ItemComponent> asComponents() {
+        ArrayList<ItemComponent> list = new ArrayList<>();
         list.add(StringSelectMenu.create("gameFormat")
                         .addOption("三人東", "三人：東一至東三")
                         .addOption("三人南", "三人：東一至南三")

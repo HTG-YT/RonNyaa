@@ -17,15 +17,15 @@ import io.github.cdimascio.dotenv.DotenvBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class RonNyaaMain {
     private static final Logger LOGGER = LoggerFactory.getLogger(RonNyaaMain.class);
     public static final Dotenv DOTENV = new DotenvBuilder().load();
 
-    public static List<FriendsMatchCreationSteps> stepsPool = new ArrayList<>();
+    public static Map<Integer, FriendsMatchCreationSteps> stepsPool = new HashMap<>();
 
     public static void main(String[] args) {
         try {
