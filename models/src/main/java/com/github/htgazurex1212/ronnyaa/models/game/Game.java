@@ -16,7 +16,7 @@ public class Game {
     public boolean isFriendly() {
         return !isRanked();
     }
-    
+
     public boolean isRanked() {
         return roomRank != null;
     }
