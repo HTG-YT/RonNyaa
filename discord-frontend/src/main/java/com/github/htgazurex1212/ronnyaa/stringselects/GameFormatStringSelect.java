@@ -2,7 +2,6 @@ package com.github.htgazurex1212.ronnyaa.stringselects;
 
 import com.github.htgazurex1212.ronnyaa.models.discord.IStringSelect;
 import net.dv8tion.jda.api.events.interaction.component.StringSelectInteractionEvent;
-import net.dv8tion.jda.api.interactions.components.selections.StringSelectMenu;
 
 public class GameFormatStringSelect implements IStringSelect {
     @Override
