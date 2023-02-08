@@ -1,2 +1,4 @@
-package com.github.htgazurex1212.ronnyaa.gamecreation.friends;public class FriendsMatchCreationSteps {
+package com.github.htgazurex1212.ronnyaa.gamecreation.friends;
+
+public class FriendsMatchCreationSteps {
 }
