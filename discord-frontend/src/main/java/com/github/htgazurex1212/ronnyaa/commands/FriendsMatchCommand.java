@@ -23,6 +23,7 @@ public class FriendsMatchCommand implements IApplicationCommand {
                         .addOption("四人南", "四人：東一至南四")
                         .addOption("四人北", "四人：東一至北四")
                         .build()
-                );
+                )
+                .queue();
     }
 }
