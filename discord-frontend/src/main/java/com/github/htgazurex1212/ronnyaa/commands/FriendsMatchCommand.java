@@ -23,10 +23,10 @@ public class FriendsMatchCommand implements IApplicationCommand {
         FriendsMatchCreationSteps steps = new FriendsMatchCreationSteps(gameId);
         RonNyaaMain.stepsPool.put(gameId, steps);
 
-        ReplyCallbackAction action = event.reply(steps.steps.get(0).message())
+        ReplyCallbackAction action = event.reply(steps.firstStep().message())
                 .setEphemeral(true);
 
-        for (ItemComponent components : steps.steps.get(0).asComponents()) {
+        for (ItemComponent components : steps.firstStep().asComponents()) {
             action.addActionRow(components);
         }
 
