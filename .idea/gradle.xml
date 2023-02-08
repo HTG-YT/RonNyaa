@@ -10,6 +10,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/discord-frontend" />
+            <option value="$PROJECT_DIR$/game-creation" />
             <option value="$PROJECT_DIR$/models" />
           </set>
         </option>
