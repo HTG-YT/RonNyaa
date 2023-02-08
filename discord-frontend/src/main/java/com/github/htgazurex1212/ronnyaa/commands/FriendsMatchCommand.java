@@ -6,7 +6,7 @@ import com.github.htgazurex1212.ronnyaa.models.discord.IApplicationCommand;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.interactions.commands.build.CommandData;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
-import net.dv8tion.jda.api.interactions.components.Component;
+import net.dv8tion.jda.api.interactions.components.ItemComponent;
 import net.dv8tion.jda.api.requests.restaction.interactions.ReplyCallbackAction;
 
 import java.util.Random;
@@ -26,9 +26,10 @@ public class FriendsMatchCommand implements IApplicationCommand {
         ReplyCallbackAction action = event.reply(steps.steps.get(0).message())
                 .setEphemeral(true);
 
-        for (Component components : steps.steps.get(0).asComponents()) {
-            action
-                    .addActionRow(components);
+        for (ItemComponent components : steps.steps.get(0).asComponents()) {
+            action.addActionRow(components);
         }
+
+        action.queue();
     }
 }
