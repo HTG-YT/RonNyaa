@@ -4,7 +4,5 @@ import net.dv8tion.jda.api.events.interaction.component.StringSelectInteractionE
 import net.dv8tion.jda.api.interactions.components.selections.StringSelectMenu;
 
 public interface IStringSelect {
-    StringSelectMenu asStringSelect();
-
     void handle(StringSelectInteractionEvent event);
 }
