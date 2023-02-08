@@ -7,6 +7,7 @@ import com.github.htgazurex1212.ronnyaa.commands.RegisterCommand;
 import com.github.htgazurex1212.ronnyaa.listeners.ModalInteractionListener;
 import com.github.htgazurex1212.ronnyaa.listeners.ReadyListener;
 import com.github.htgazurex1212.ronnyaa.listeners.SlashCommandInteractionListener;
+import com.github.htgazurex1212.ronnyaa.listeners.StringSelectInteractionListener;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.requests.GatewayIntent;
@@ -29,7 +30,8 @@ public class RonNyaaMain {
                     .addEventListeners(
                             new ModalInteractionListener(),
                             new ReadyListener(),
-                            new SlashCommandInteractionListener()
+                            new SlashCommandInteractionListener(),
+                            new StringSelectInteractionListener()
                     )
                     .build();
 
