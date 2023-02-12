@@ -1,5 +1,7 @@
 package com.github.htgazurex1212.ronnyaa.buttons;
 
+import com.github.htgazurex1212.ronnyaa.RonNyaaMain;
+import com.github.htgazurex1212.ronnyaa.gamecreation.friends.FriendsMatchCreationSteps;
 import com.github.htgazurex1212.ronnyaa.models.discord.IButton;
 import net.dv8tion.jda.api.events.interaction.component.ButtonInteractionEvent;
 
@@ -19,5 +21,7 @@ public class FriendsMatchCreationNextStepButton implements IButton {
         String gameIdLine = messageLines.get(1);
         String gameIdString = gameIdLine.substring(5, gameIdLine.length() - 2);
         int gameId = Integer.parseInt(gameIdString);
+
+        FriendsMatchCreationSteps steps = RonNyaaMain.stepsPool.get(gameId);
     }
 }
