@@ -33,7 +33,7 @@ public class GameFormatStep implements IFriendsMatchCreationStep {
                         .addOption("四人北", "四人：東一至北四")
                         .build()
         );
-        list.add(Button.success("nextStep", "下一步"));
+        list.add(Button.primary("nextStep", "下一步"));
 
         return list;
     }

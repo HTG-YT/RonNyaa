@@ -8,8 +8,8 @@ import org.jetbrains.annotations.NotNull;
 public class StringSelectInteractionListener extends ListenerAdapter {
     @Override
     public void onStringSelectInteraction(@NotNull StringSelectInteractionEvent event) {
-        switch (event.getComponentId()) {
-            case "gameFormat" -> new GameFormatStringSelect().handle(event);
+        if (event.getComponentId().equals("gameFormat")) {
+            new GameFormatStringSelect().handle(event);
         }
     }
 }
