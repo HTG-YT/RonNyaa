@@ -19,7 +19,7 @@ public class FriendsMatchCommand implements IApplicationCommand {
 
     @Override
     public void execute(SlashCommandInteractionEvent event) {
-        int gameId = new Random().nextInt(100000, 1000000);
+        int gameId = new Random().nextInt(10000, 100000);
         FriendsMatchCreationSteps steps = new FriendsMatchCreationSteps(gameId);
         RonNyaaMain.stepsPool.put(gameId, steps);
 

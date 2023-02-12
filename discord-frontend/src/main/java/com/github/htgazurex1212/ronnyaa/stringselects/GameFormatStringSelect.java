@@ -6,8 +6,17 @@ import net.dv8tion.jda.api.events.interaction.component.StringSelectInteractionE
 public class GameFormatStringSelect implements IStringSelect {
     @Override
     public void handle(StringSelectInteractionEvent event) {
-        event.editMessage("請完成友人場房間設定。（`1 / 1`）\n**對局長度："
-                        + event.getInteraction().getSelectedOptions().get(0).getLabel() + "**"
+        String display = event.getMessage().getContentRaw();
+        System.out.println(display);
+        if (!display.endsWith("：**")) {
+            display = display.substring(0, display.length() - 5);
+        } else {
+            display = display.substring(0, display.length() - 2);
+        }
+
+        event.editMessage(display
+                        + event.getInteraction().getSelectedOptions().get(0).getLabel()
+                        + "**"
                 )
                 .queue();
     }
