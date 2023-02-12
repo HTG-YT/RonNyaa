@@ -5,10 +5,7 @@ import com.github.htgazurex1212.ronnyaa.commands.PingCommand;
 import com.github.htgazurex1212.ronnyaa.commands.ProfileCommand;
 import com.github.htgazurex1212.ronnyaa.commands.RegisterCommand;
 import com.github.htgazurex1212.ronnyaa.gamecreation.friends.FriendsMatchCreationSteps;
-import com.github.htgazurex1212.ronnyaa.listeners.ModalInteractionListener;
-import com.github.htgazurex1212.ronnyaa.listeners.ReadyListener;
-import com.github.htgazurex1212.ronnyaa.listeners.SlashCommandInteractionListener;
-import com.github.htgazurex1212.ronnyaa.listeners.StringSelectInteractionListener;
+import com.github.htgazurex1212.ronnyaa.listeners.*;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.requests.GatewayIntent;
@@ -35,6 +32,7 @@ public class RonNyaaMain {
             JDA jda = JDABuilder
                     .create(DOTENV.get("RONNYAA_BOT_TOKEN"), GatewayIntent.getIntents(GatewayIntent.ALL_INTENTS))
                     .addEventListeners(
+                            new ButtonInteractionListener(),
                             new ModalInteractionListener(),
                             new ReadyListener(),
                             new SlashCommandInteractionListener(),

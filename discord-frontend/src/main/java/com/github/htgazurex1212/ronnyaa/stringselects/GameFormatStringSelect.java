@@ -7,7 +7,6 @@ public class GameFormatStringSelect implements IStringSelect {
     @Override
     public void handle(StringSelectInteractionEvent event) {
         String display = event.getMessage().getContentRaw();
-        System.out.println(display);
         if (!display.endsWith("：**")) {
             display = display.substring(0, display.length() - 5);
         } else {

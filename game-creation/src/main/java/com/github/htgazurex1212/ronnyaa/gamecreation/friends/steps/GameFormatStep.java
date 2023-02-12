@@ -17,7 +17,7 @@ public class GameFormatStep implements IFriendsMatchCreationStep {
 
     @Override
     public String message() {
-        return "請完成友人場房間設定。（`1 / 1`）\n**房號：" + this.gameId + "**\n**對局長度：**";
+        return "請完成友人場房間設定。（`1 / 2`）\n**房號：" + this.gameId + "**\n**對局長度：**";
     }
 
     @Override
@@ -33,7 +33,7 @@ public class GameFormatStep implements IFriendsMatchCreationStep {
                         .addOption("四人北", "四人：東一至北四")
                         .build()
         );
-        list.add(Button.success("confirm", "確定"));
+        list.add(Button.success("nextStep", "下一步"));
 
         return list;
     }
