@@ -2,7 +2,6 @@ package com.github.htgazurex1212.ronnyaa.gamecreation.friends;
 
 import com.github.htgazurex1212.ronnyaa.gamecreation.friends.steps.GameFormatStep;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,10 +21,14 @@ public class FriendsMatchCreationSteps {
     }
 
     public @NotNull IFriendsMatchCreationStep firstStep() {
+        return steps.get(0);
+    }
+
+    public @NotNull IFriendsMatchCreationStep currentStep() {
         return steps.get(currentStep);
     }
 
-    public @Nullable IFriendsMatchCreationStep nextStep() {
+    public @NotNull IFriendsMatchCreationStep nextStep() {
         currentStep += 1;
         return steps.get(currentStep);
     }

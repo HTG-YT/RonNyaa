@@ -6,6 +6,7 @@ import com.github.htgazurex1212.ronnyaa.commands.ProfileCommand;
 import com.github.htgazurex1212.ronnyaa.commands.RegisterCommand;
 import com.github.htgazurex1212.ronnyaa.gamecreation.friends.FriendsMatchCreationSteps;
 import com.github.htgazurex1212.ronnyaa.listeners.*;
+import com.github.htgazurex1212.ronnyaa.models.game.Game;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.requests.GatewayIntent;
@@ -23,6 +24,7 @@ public class RonNyaaMain {
     public static final Dotenv DOTENV = new DotenvBuilder().load();
 
     public static Map<Integer, FriendsMatchCreationSteps> stepsPool = new HashMap<>();
+    public static Map<Integer, Game> gamePool = new HashMap<>();
 
     public static void main(String[] args) {
         try {

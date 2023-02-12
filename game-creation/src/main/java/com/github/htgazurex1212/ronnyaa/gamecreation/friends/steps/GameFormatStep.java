@@ -1,6 +1,8 @@
 package com.github.htgazurex1212.ronnyaa.gamecreation.friends.steps;
 
 import com.github.htgazurex1212.ronnyaa.gamecreation.friends.IFriendsMatchCreationStep;
+import com.github.htgazurex1212.ronnyaa.models.game.Game;
+import com.github.htgazurex1212.ronnyaa.models.game.GameType;
 import net.dv8tion.jda.api.interactions.components.ItemComponent;
 import net.dv8tion.jda.api.interactions.components.buttons.Button;
 import net.dv8tion.jda.api.interactions.components.selections.StringSelectMenu;
@@ -36,5 +38,13 @@ public class GameFormatStep implements IFriendsMatchCreationStep {
         list.add(Button.primary("nextStep", "下一步"));
 
         return list;
+    }
+
+    @Override
+    public void save(Game game, Object data) {
+        String type = (String) data;
+
+        game.gameType = GameType.of(type);
+        System.out.println(game.gameType);
     }
 }
