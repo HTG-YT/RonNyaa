@@ -17,7 +17,7 @@ public class GameFormatStep implements IFriendsMatchCreationStep {
 
     @Override
     public String message() {
-        return "請完成友人場房間設定。（`1 / 1`）\n**對局長度：**";
+        return "請完成友人場房間設定。（`1 / 1`）\n**房號：" + this.gameId + "**\n**對局長度：**";
     }
 
     @Override
